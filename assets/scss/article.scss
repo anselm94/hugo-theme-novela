@@ -1,7 +1,11 @@
 /**************************************ARTICLE HEAD**************************************/
 
 .article-hero{
+    margin-top: 4rem;
+
     @media screen and (max-width: $phablet){
+        margin-top: 0;
+
         &::before {
           content: "";
           width: 100%;
@@ -47,29 +51,30 @@
 .article-header{
     position: relative;
     z-index: 10;
-    margin:100px auto 120px;
+    margin: 4rem auto 6rem;
     padding-left: 68px;
     max-width: 749px;
   
     @media screen and (max-width: $desktop){
         padding-left: 53px;
         max-width: calc(507px + 53px);
-        margin: 100px auto 70px;
+        margin: 3rem auto 4rem;
+        text-align: center;
     }
 
     @media screen and (max-width: $tablet){
         padding-left: 0;
-        margin: 100px auto 70px;
+        margin: 3rem auto 4rem;
         max-width: 480px;
     }
 
     @media screen and (max-width: $phablet){
-        margin: 170px auto 180px;
-        padding: 0 40px;
+        padding: 0;
+        margin: 3rem auto 4rem;
     }
   
     @media screen and (max-height: 700px) {
-      margin: 100px auto;
+      margin: 3rem auto;
     }
 }
 
@@ -136,7 +141,8 @@
 }
 
 .article-hero-image{
-    position: absolute;
+    position: relative;
+
     z-index: 1;
     width: 100%;
     max-width: 944px;
@@ -181,6 +187,7 @@
         -ms-flex-align: center;
             align-items: center;
     color: inherit;
+    justify-content: start;
 
     &:hover{
         text-decoration: none;
@@ -198,6 +205,11 @@
   
     &:hover strong {
       color: var(--primary);
+    }
+
+    /*PHABLET*/
+    @media screen and (max-width: $phablet){
+        justify-content: center;
     }
 }
 
@@ -449,7 +461,16 @@
 /**************************************ARTICLE BODY**************************************/
 
 .post-content{
-    padding: 160px 0 35px;
+    padding: 6rem 0 1rem;
+    margin-top: -40rem;
+
+    @media screen and (max-width: $phablet){
+        padding: 1rem 0 1rem;
+    }
+
+    @media screen and (max-width: $desktop_medium){
+        margin-top: 0rem;
+    }
 }
 
 /**************************************ARTICLE NEXT**************************************/
@@ -500,4 +521,21 @@
 
 .footer-spacer{
     margin-bottom: 65px;
+}
+
+.article-tags {
+    display: flex;
+    flex-direction: row;
+    padding-top: 2rem;
+    justify-content: start;
+
+    @media screen and (max-width: $desktop){
+        justify-content: center;
+    }
+}
+
+.article-tag {
+    font-weight: bold;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }

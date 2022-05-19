@@ -9,6 +9,11 @@
                     • {{ .ReadingTime }} min read
                 </div>
             </div>
+            <div class="article-tags">
+                {{ range .Page.Params.tags }}
+                <a class="article-tag" href="/tags/{{ . | urlize }}">#{{ . }}</a>
+                {{ end }}
+            </div>
         </header>
         {{ with .Page.Params.hero }}
         <div class="article-hero-image" id="ArticleImage__Hero">
